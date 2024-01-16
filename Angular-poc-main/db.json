@@ -54,10 +54,6 @@
       "email": "ss@gmail.com",
       "dob": "2023-11-01T18:30:00.000Z",
       "password": "2209@Sahanakocharagi",
-      "website": [
-        "ItSolutionStuff.com",
-        "HDTuto.com"
-      ],
       "domain": "Tester",
       "status":"completed",
 
@@ -71,9 +67,6 @@
       "email": "ksdlkdj@gmail.com",
       "dob": "2023-11-16T18:30:00.000Z",
       "password": "2209@Sahanakocharagi",
-      "website": [
-        "ItSolutionStuff.com"
-      ],
       "domain": "Tester",
       "status":"inprogress",
       "id": 27
@@ -86,10 +79,6 @@
       "email": "sahana@gmail.com",
       "dob": "2023-11-10T18:30:00.000Z",
       "password": "2209@sahanaKocharagi",
-      "website": [
-        "ItSolutionStuff.com",
-        "Nicesnippets.com"
-      ],
       "domain": "Frontend",
       "status":"completed",
       "id": 28
@@ -102,10 +91,6 @@
       "email": "sahana@gmail.com",
       "dob": "2023-11-10T18:30:00.000Z",
       "password": "2209@sahanaKocharagi",
-      "website": [
-        "ItSolutionStuff.com",
-        "Nicesnippets.com"
-      ],
       "domain": "Frontend",
       "status":"pending",
       "id": 28
@@ -118,10 +103,6 @@
       "email": "sahana@gmail.com",
       "dob": "2023-11-10T18:30:00.000Z",
       "password": "2209@sahanaKocharagi",
-      "website": [
-        "ItSolutionStuff.com",
-        "Nicesnippets.com"
-      ],
       "domain": "Frontend",
       "status":"pending",
       "id": 28
@@ -134,10 +115,6 @@
       "email": "sahana@gmail.com",
       "dob": "2023-11-10T18:30:00.000Z",
       "password": "2209@sahanaKocharagi",
-      "website": [
-        "ItSolutionStuff.com",
-        "Nicesnippets.com"
-      ],
       "domain": "Frontend",
       "status":"pending",
       "id": 28
@@ -150,11 +127,8 @@
       "email": "sahana@gmail.com",
       "dob": "2023-11-10T18:30:00.000Z",
       "password": "2209@sahanaKocharagi",
-      "website": [
-        "ItSolutionStuff.com",
-        "Nicesnippets.com"
-      ],
       "domain": "Frontend",
+      "status":"pending",
       "id": 28
     },
     {
@@ -165,10 +139,6 @@
       "email": "sahana@gmail.com",
       "dob": "2023-11-10T18:30:00.000Z",
       "password": "2209@sahanaKocharagi",
-      "website": [
-        "ItSolutionStuff.com",
-        "Nicesnippets.com"
-      ],
       "domain": "Frontend",
       "status":"inprogress",
       "id": 28
@@ -180,10 +150,6 @@
       "email": "sahana@gmail.com",
       "dob": "2023-11-10T18:30:00.000Z",
       "password": "2209@sahanaKocharagi",
-      "website": [
-        "ItSolutionStuff.com",
-        "Nicesnippets.com"
-      ],
       "domain": "Frontend",
       "status":"completed",
       "id": 28
@@ -197,10 +163,6 @@
       "email": "sahana@gmail.com",
       "dob": "2023-11-10T18:30:00.000Z",
       "password": "2209@sahanaKocharagi",
-      "website": [
-        "ItSolutionStuff.com",
-        "Nicesnippets.com"
-      ],
       "domain": "Frontend",
       "status":"completed",
       "id": 28

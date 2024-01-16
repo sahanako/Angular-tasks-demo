@@ -313,6 +313,7 @@ console.log(this.selectedChips.includes(item.status));
     (this.domain as FormControl).setValue([]);
     (this.project as FormControl).setValue(null);
     (this.date as FormControl).setValue([])
+    this.selectedChips = []
     this.applyFilters();
   }
   
@@ -391,7 +392,6 @@ exportToExcel() {
     console.error('DataSource is empty or not defined');
     return;
   }
-
   const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.filteredData);
   // generate workbook and add the worksheet
   const workbook: XLSX.WorkBook = XLSX.utils.book_new();
