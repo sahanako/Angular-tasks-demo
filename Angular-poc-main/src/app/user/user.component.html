@@ -1,0 +1,69 @@
+
+<div class="container" >
+
+  <h1>USER DETAILS</h1>
+    <div>
+      <button mat-raised-button color="accent" (click)="addUser()">Add User</button>
+    </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" demo-table>
+   
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef> Gender </th>
+      <td mat-cell *matCellDef="let element"> {{ element.gender }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{ element.email }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phoneno">
+      <th mat-header-cell *matHeaderCellDef> Phone No. </th>
+      <td mat-cell *matCellDef="let element"> {{ element.phoneno }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef> DOB </th>
+      <td mat-cell *matCellDef="let element"> {{ element.dob }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="domain">
+      <th mat-header-cell *matHeaderCellDef> Domain </th>
+      <td mat-cell *matCellDef="let element"> {{ element.domain }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="userEdit(element.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        
+        <button mat-icon-button [routerLink]="['/user/data', element.id]">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteConfirm(element.id)"  >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <ng-container>
+      
+    </ng-container>
+
+   
+    <!-- Header row -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <!-- Data rows -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+  </table>
+  <!-- <button [routerLink]="['/user/add']">AddUSer</button> -->
+  </div>

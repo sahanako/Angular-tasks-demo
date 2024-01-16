@@ -1,0 +1,24 @@
+
+    <div class="container">
+    <header class="header">
+      <h2>Login Now!</h2>
+      <p>Please login and use the facilities.</p>
+    </header>
+    
+    <div class="content">
+      <div >
+        <label for="name">Name</label>
+        <input type="text" id="name" class="name" [(ngModel)]="name" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" class="email" [(ngModel)]="email" />
+        </div>
+        <div>
+        <label for="pass">Password</label>
+        <input type="password" id="pass" class="pass"  [(ngModel)]="pass" />
+        </div>
+        <button type="submit" id="login" [disabled]="name ==='' || email ==='' || pass ===''"  class="btn btn-primary"(click)="onCreate()" >Submit</button>
+        <p>{{ loginUser }}</p>
+    </div>
+    </div>

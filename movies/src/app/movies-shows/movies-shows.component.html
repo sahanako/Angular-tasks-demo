@@ -1,0 +1,98 @@
+
+<div>
+    <button (click)="navigate('movie')">Movies</button>
+    <button (click)="navigate('tv')">Tv Shows</button>
+</div>
+
+
+  <div>
+    <section>
+
+    <!-- <h1 *ngIf="selectedTab === 'movie'">Now Playing{{selectedTab}}</h1>
+    <div class="div-1">
+        <mat-card class="card" *ngFor="let item of movies" routerLink="/movie-data/{{item.id}}">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title></mat-card-title>
+            </mat-card-header> 
+            <img mat-card-image src="https://image.tmdb.org/t/p/original{{item.poster_path}}" alt="photo of {{item.title}}">
+            <mat-card-content>
+              <p>
+                {{ item.vote_average.toFixed(1) }}
+              </p>
+            </mat-card-content>
+          </mat-card>
+    </div> -->
+
+    <h1>Trending</h1>
+    <div class="div-2" >
+      <div *ngFor="let item of trendingMovies" [routerLink]="[item.id]">
+        <mat-card class="card" *ngIf="item.poster_path">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>
+                <ng-container *ngIf="selectedTab === 'movie' ? 'movie' :tv">{{item.title}}</ng-container>
+                <ng-container #tv>{{item.name}}</ng-container>
+              </mat-card-title>
+            </mat-card-header> 
+            <img mat-card-image src="https://image.tmdb.org/t/p/original{{item.poster_path}}" alt="photo of {{item.title}}">
+            <mat-card-content>
+              <p>
+                {{ item.vote_average.toFixed(1) }}
+              </p>
+            </mat-card-content>
+          </mat-card> 
+        </div>
+    </div>
+ </section>   
+  </div>
+
+  <section>
+  <h1>Popular</h1>
+    <div class="div-2" >
+      <div *ngFor="let item of airshow" [routerLink]="[item.id]">
+        <mat-card class="card" *ngIf="item.poster_path">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>
+                <ng-container *ngIf="selectedTab === 'movie' ? 'movie' :tv">{{item.title}}</ng-container>
+                <ng-container #tv>{{item.name}}</ng-container>
+              </mat-card-title>
+            </mat-card-header> 
+            <img mat-card-image src="https://image.tmdb.org/t/p/original{{item.poster_path}}" alt="photo of {{item.title}}">
+            <mat-card-content>
+              <p>
+                {{ item.vote_average.toFixed(1) }}
+              </p>
+            </mat-card-content>
+          </mat-card> 
+        </div>
+    </div>
+ </section>   
+
+
+<!-- <ng-template  #tv> -->
+  <!-- <h2>Shows - AIR</h2>
+  <div class="div-3">
+    <div *ngFor="let item of airshow">
+      <mat-card class="card" *ngIf="item.poster_path">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ item.id }}</mat-card-title>
+        </mat-card-header> 
+        <img mat-card-image src="https://image.tmdb.org/t/p/original{{item.poster_path}}" alt="photo of {{item.title}}">
+        <mat-card-content>
+          <p>
+            {{ item.vote_average.toFixed(1) }}
+          </p>
+          {{item | json}}
+
+        </mat-card-content>
+
+      </mat-card>
+      </div>
+</div> -->
+<!-- </ng-template> -->
+
+
+<!-- <app-movie-details [shows]="shows"></app-movie-details> -->

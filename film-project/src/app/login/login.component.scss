@@ -1,0 +1,96 @@
+.login-container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffe645 0%, #e2aa02 100%);
+    position: relative;
+
+    .logo {
+        font-size: 40px;
+        font-weight: bold;
+        font-family: 'Creepster', cursive;
+        letter-spacing: 10px;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+
+        .desc {
+            font-size: 25px;
+            font-family: 'Aladin', cursive;
+            top: 130px;
+            right: 5px;
+            position: absolute;
+            text-align: right;
+            width: 900px;
+            letter-spacing: 5px;
+       
+
+    .login-form {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: right;
+        height: 150px;
+        padding: 40px;
+        left: 400px;
+        top: 270px;
+
+        width: 420px;
+        background: white;
+        border-radius: 20px;
+
+        .login-fields {
+            position: absolute;
+            bottom: 85px;
+              input {
+        width: 188px;
+        height: 30px;
+        border-radius: 9px;
+        margin: 12px;
+    }
+
+    label {
+        padding: 20px;
+        font-size: 25px;
+    }
+
+        }
+    
+
+
+  
+
+.btn-container {
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+
+    .errmsg {
+        position: relative;
+        text-align: center;
+        top: 28px;
+        font-size: 15px;
+        letter-spacing: 2px;
+        color: red;
+        left: 120px;
+        font-family: 'Franklin Gothic Medium';
+    }
+    .btn {
+        position: absolute;
+        width: 100px;
+        height: 35px;
+        padding: 7px;
+        border-radius: 10px;
+        right: 150px;
+        top: 50px;
+        left: 130px;
+        bottom: 10px;
+
+    }
+    }
+    
+}
+    }
+
+}
+}

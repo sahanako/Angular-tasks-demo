@@ -1,0 +1,12 @@
+<p>Parent Message(child to parent): {{childMessage}}</p>
+<p>Childmessage (via view child):{{childmessage}}</p>
+
+
+<p>there are {{names.length}} names</p>
+
+
+<!-- <app-child-component [child]="parentMessage" [dataa]="parentMessage" (sendMessage)="receiveMessage($event)" ></app-child-component>
+<app-child-component *ngFor="let name of names" [name]="name" ></app-child-component> -->
+<button (click)="newmajor()">new major</button>
+<button (click)="newminor()" >new minor</button>
+<app-child-component  [major]="major" [minor]="minor"></app-child-component>

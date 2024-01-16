@@ -1,0 +1,166 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+
+
+.main-container{
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    width: 100%;
+    /* background-image: url('/assets/images/Image.png'); */
+}
+
+.main-container img{
+    display: block;
+    width: 100%;
+}
+.heading{
+    position: absolute;
+    display: inline;
+    width: 100%;
+    top: 75%;
+    left: 80%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+    color: #FFFFFF;
+}
+.heading-para{
+    color: #999999;
+    width: 80%;
+    height: 20%;
+    line-height: 21px;
+    display: inline;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    z-index: 1001;
+    position: absolute;
+    bottom: -2%;
+    /* top: 20%; */
+    padding-left: 170px;
+}
+.div1{
+    position: relative;
+}
+.image1{
+    position: relative;
+    z-index: -999;
+}
+.image2{
+    position: absolute;
+    top: 0px;
+    z-index:999;
+}
+.div4{
+    position: relative;
+}
+.image3{
+    position: relative;
+    z-index: -1;
+}
+.image4{
+    position: absolute;
+    bottom: 0px;
+    z-index: 999;
+}
+
+.abstract-image{
+    z-index: 999;
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    position:   absolute;
+    bottom: 30%;
+    left:40%;
+}
+div{
+    margin: 8px;
+}
+
+.btn{
+    position: absolute;
+    bottom: 7%;
+    z-index: 1002;
+    left: 47%;
+}
+
+.categories{
+    width: 96%;
+    position: relative;
+    left: 10%;
+    /* background-color: rgba(0, 0, 0, 0.815); */
+}
+
+h1{
+    display: inline;
+}
+
+h4{
+    font-weight: lighter;
+}
+
+h1 h4{
+    line-height: 70px;
+}
+
+.mat-card{
+    max-width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.img{
+    width:185.85px ;
+    height:275px;
+}
+mat-card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow-icon{
+    float: right !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    font-size: 25px;
+    /* width: 20px;
+    height: 20px; */
+}
+
+.section-questions{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.question-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 2;
+}
+
+.all-one{
+    display: flex;
+    justify-content: space-around;
+}
+.panel{
+    width: 50%;
+}

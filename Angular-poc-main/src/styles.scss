@@ -1,0 +1,99 @@
+// /* You can add global styles to this file, and also import other style files */
+// @import url("https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300&display=swap");
+
+// $bg-color: rgba(133, 146, 146, 0.185);
+// $header-color: rgb(108, 94, 76);
+// @mixin flexprop{
+//    display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   padding: auto;
+// }
+// @mixin commoncode($padding){
+//     padding: $padding;
+// }
+
+// * {
+//   padding: 0;
+//   margin: 0;
+//   font-family: "Martian Mono", monospace;
+//   box-sizing: border-box;
+// }
+// body{
+//     background-color: $bg-color;
+    
+    
+//     height: 100vh; 
+//     width: 100vw;
+//     // padding: 100px 0;
+//     @include flexprop();
+// }
+// .custom-form-field{
+//   padding-top: 200px;
+// }
+// mat-form-field{
+//   width: 500px;
+// }
+
+// button.mat-raised-button{
+//   margin-top: 2em;
+// }
+// table {
+//   width: 100%;
+// }
+// .container{
+//     input{
+//     @include flexprop();
+//     @include commoncode(10px);
+//     border-radius: 10px;
+// }
+// .header {
+//     @include flexprop;
+//   color: $header-color;
+//   h2{
+//     font-size: 35px;
+//   }
+//   p{
+//     font-size:25px;
+//   }
+// }
+// .content {
+//   @include flexprop;
+//   padding: 10px;
+//   #login{
+//     @include flexprop();
+//     background-color: rgba(19, 19, 120, 0.676);
+//     @include commoncode(10px);
+//     border-radius:5px;
+//     margin-top: 10px;
+//     font-weight: 900;
+// }
+// }
+
+// }
+
+
+
+
+
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 3em;
+    line-height: 2em;
+    h2{
+        font-size: 28px;
+        font-weight: 500
+    }
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,50 @@
+<!-- <div class="scroll-container">
+  <cdk-virtual-scroll-viewport itemSize="50" class="viewport" >
+    <table class="table" cdk-virtual-scroll>
+    <tr *cdkVirtualFor="let item of Data">
+      <td>{{ item.column1 }}   </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      <td>{{ item.column1 }} </td>
+      <td>{{ item.column2 }}</td>
+      
+    </tr>
+  </table>
+</cdk-virtual-scroll-viewport>
+</div> -->
+<!-- Assuming this is your component's template file (e.g., app.component.html) -->
+
+<ul *ngFor="let menuItem of menu">
+  <li>
+    <!-- {{ menuItem.title }} -->
+    <!-- Display subItem if present -->
+    <ul *ngIf="menuItem.subItem && menuItem.subItem.length > 0">
+      <li *ngFor="let subItem of menuItem.subItem">
+        {{ subItem.title }}
+      </li>
+    </ul>
+  </li>
+</ul>

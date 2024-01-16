@@ -1,0 +1,95 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "Users": [
+    {
+      "name": "hub",
+      "gender": "male",
+      "address": "sasads",
+      "phoneno": "9234567899",
+      "email": "sahana2@gmail.com",
+      "dob": "2023-10-09T18:30:00.000Z",
+      "password": "Sahana@1",
+      "website": [
+        "ItSolutionStuff.com",
+        "HDTuto.com"
+      ],
+      "domain": "Frontend",
+      "id": 24
+    },
+    {
+      "name": "sahana",
+      "gender": "female",
+      "address": "sdjadjahdgdjhsjd",
+      "phoneno": "9880111633",
+      "email": "sahana22@gm",
+      "dob": "2023-11-20T18:30:00.000Z",
+      "password": "1234@Sahanakocharagi",
+      "website": [
+        "ItSolutionStuff.com",
+        "HDTuto.com"
+      ],
+      "domain": "Frontend",
+      "id": 25
+    },
+    {
+      "name": "skjdhsad",
+      "gender": "male",
+      "address": "dffds",
+      "phoneno": "9880111633",
+      "email": "ss@gmail.com",
+      "dob": "2023-11-01T18:30:00.000Z",
+      "password": "2209@Sahanakocharagi",
+      "website": [
+        "ItSolutionStuff.com",
+        "HDTuto.com"
+      ],
+      "domain": "Frontend",
+      "id": 26
+    },
+    {
+      "name": "sakjdkdj",
+      "gender": "male",
+      "address": "sadkajdksd",
+      "phoneno": "98810222737",
+      "email": "ksdlkdj@gmail.com",
+      "dob": "2023-11-16T18:30:00.000Z",
+      "password": "2209@Sahanakocharagi",
+      "website": [
+        "ItSolutionStuff.com"
+      ],
+      "domain": "Frontend",
+      "id": 27
+    },
+    {
+      "name": "dsad",
+      "gender": "male",
+      "address": "sdada",
+      "phoneno": "9880111633",
+      "email": "sahana@gmail.com",
+      "dob": "2023-11-10T18:30:00.000Z",
+      "password": "2209@sahanaKocharagi",
+      "website": [
+        "ItSolutionStuff.com",
+        "Nicesnippets.com"
+      ],
+      "domain": "Frontend",
+      "id": 28
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

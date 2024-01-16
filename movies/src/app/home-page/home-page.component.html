@@ -1,0 +1,90 @@
+<section class="main-container">
+    <div class="div1">
+        <img src="assets/images/top-image4.png" alt="" class="image1">
+        <img src="assets/images/Fade Out Top.png" alt="" class="image2">
+    </div>
+    <div>
+        <img src="assets/images/top-image1.png" alt="2nd image">
+    </div>
+    <div>
+        <img src="assets/images/top-image2.png" alt="">
+    </div>
+    <div class="div4">
+        <img src="assets/images/top-image3.png" alt="" class="image3">
+        <img src="assets/images/Fade Out Bottom.png" alt="" class="image4">
+    </div>
+    <div class="abstract-image">
+        <img src="assets/images/Abstract.png" alt="">
+    </div>
+    <div>
+        <h1 class="heading">The Best Streaming Experience</h1>
+        <p class="heading-para">StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime,
+            anywhere. With StreamVibe, you can enjoy a wide variety of content, including the latest blockbusters,
+            classic movies, popular TV shows, and more. You can also create your own watchlists, so you can easily find
+            the content you want to watch.</p>
+        <!-- <mat-icon>play_arrow</mat-icon> -->
+        <button mat-raised-button color="warn" class="btn">
+            Start Watching Now</button>
+    </div>
+</section>
+
+
+
+<section class="section">
+
+    <div class="categories">
+        <h1>Explore our wide variety of categories</h1>
+        <h4>Whether you're looking for a comedy to make you laugh , a drama to make you think ,or
+            a documentary to learn something new.</h4>
+    </div>
+
+    <div class="mat-card" *ngFor="let movie of movies ">
+        <mat-card class="card" *ngIf="movie.posterPath">
+
+            <img class="img" [src]="movie.posterPath" alt="Genre Image">
+            <mat-card-header>
+                <mat-card-title>{{ movie.name }}</mat-card-title>
+                <mat-icon class="arrow-icon">arrow_right_alt</mat-icon>
+                <!-- <mat-card-subtitle>{{movie.genreDetails?.title}}</mat-card-subtitle>  -->
+            </mat-card-header>
+
+            <div></div>
+        </mat-card>
+    </div>
+</section>
+
+<section class="section-questions">
+    <div class="all-one">
+        <div class="question-heading">
+        <h2>Frequently asked questions</h2>
+        <h4>Got questions? We have got answers! Check out our FAQ section to find answers to the most common questions
+            about StreamVibe</h4>
+    </div>
+    <button mat-raised-button color="warn" (click)="openTaskDialog()" class="btn-ask">Ask a Question</button>
+    </div>
+    
+    <mat-accordion>
+        <mat-expansion-panel hideToggle (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false" class="panel">
+          <mat-expansion-panel-header>
+            <mat-icon *ngIf="!panelOpenState">add</mat-icon>
+            <mat-icon *ngIf="panelOpenState">remove</mat-icon>
+            <mat-panel-title>
+              What is StreamVibe?
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>Streamvibe is streaming service</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let question of questions" class="panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ question }}
+              </mat-panel-title>
+          </mat-expansion-panel-header>
+          <!-- Add any additional content here -->
+        </mat-expansion-panel>
+      </mat-accordion>
+</section>

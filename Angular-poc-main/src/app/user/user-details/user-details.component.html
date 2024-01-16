@@ -1,0 +1,28 @@
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>User Details</mat-card-title>
+    <mat-card-subtitle ></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content *ngIf="user" >
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Gender:</strong> {{ user.gender }}</p>
+    <p><strong>Phone no:</strong> {{ user.phoneno }}</p>
+    <p><strong>DOB:</strong> {{ user.dob | date }}</p>
+    <p><strong>Domain:</strong> {{ user.domain }}</p>
+    <p><strong>Address:</strong> {{ user.address }}</p>
+  
+    <div>
+      <p><strong>Selected Projects:</strong></p>
+      <ul>
+        <li *ngIf="user.project1">Project1</li>
+        <li *ngIf="user.project2">Project2</li>
+        <li *ngIf="user.project3">Project3</li>
+      </ul>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" routerLink ="/users">Close</button>
+  </mat-card-actions>
+</mat-card>
