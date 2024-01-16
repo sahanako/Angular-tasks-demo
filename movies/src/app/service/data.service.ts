@@ -101,7 +101,31 @@ export class DataService {
       return this.http.get(`${this.apiUrl}/tv/${series_id}?api_key=${this.apiKey}`
       , { headers });
     }
+
+    getSeasonDetails(series_id:number,season_number:number){
+      const headers = new HttpHeaders({
+        Authorization: `Bearer ${this.apiBearerToken}`,
+      });
+      return this.http.get(`${this.apiUrl}/tv/${series_id}/season/${season_number}?api_key=${this.apiKey}`
+      , { headers });
+    }
+
+    getEpisodeDetails(series_id:number,season_number:number,episode_number:number){
+      const headers = new HttpHeaders({
+        Authorization: `Bearer ${this.apiBearerToken}`,
+      });
+      return this.http.get(`${this.apiUrl}/tv/${series_id}/season/${season_number}/episode/${episode_number}?api_key=${this.apiKey}`
+      , { headers });
+    }
     
+    getVideos(type:string,movie_id:number){
+      const headers = new HttpHeaders({
+        Authorization: `Bearer ${this.apiBearerToken}`,
+      });
+      return this.http.get(`${this.apiUrl}/${type}/${movie_id}/videos?api_key=${this.apiKey}`
+      , { headers });
+    }
+
     private questionsSubject = new BehaviorSubject<string[]>([]);
     questions$ = this.questionsSubject.asObservable();
   

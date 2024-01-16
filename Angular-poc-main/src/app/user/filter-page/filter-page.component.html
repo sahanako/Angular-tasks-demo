@@ -1,0 +1,14 @@
+<!-- filter.component.html -->
+
+<div class="container_form">
+  <div class="labels">
+    <mat-label>{{ label }}</mat-label>
+    <mat-form-field appearance="outline">
+      <mat-select placeholder="{{ placeholder }}" [formControl]="filterControl" (selectionChange)="applyFilters()" [multiple]="!isSingleSelection">
+        <mat-option *ngFor="let option of options" [value]="option.value">
+          {{ option.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

@@ -1,9 +1,0 @@
-.card{
-    width: 300px;
-    margin: 10px;
-}
-
-.div-1,.div-2,.div-3{
-    display: flex;
-    flex-wrap: wrap;
-}

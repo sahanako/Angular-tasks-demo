@@ -17,7 +17,6 @@ import {  MatTableModule } from '@angular/material/table';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { NumericInputDirective } from './numeric-input.directive';
 import { UserRoutingModule } from './user-routing.module';
 import {MatCardModule} from '@angular/material/card';
 import { DatePipe } from '@angular/common';
@@ -25,9 +24,12 @@ import { ErrorhandlingComponent } from './errorhandling/errorhandling.component'
 import {MatDialogModule} from "@angular/material/dialog";
 import { DialogComponent } from './dialog/dialog.component';
 import { SharedModule } from '../shared/shared.module';
-
-
-
+import {MatMenuModule} from '@angular/material/menu';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { FooterComponent } from './footer/footer.component';
+import { FilterPageComponent } from './filter-page/filter-page.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatChipsModule,MatChipInput } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -37,10 +39,10 @@ import { SharedModule } from '../shared/shared.module';
     UserEditComponent,
     UserDetailsComponent,
     UserEditComponent,
-    NumericInputDirective,
     ErrorhandlingComponent,
     DialogComponent,
-    
+    FooterComponent,
+    FilterPageComponent
   ],
   
   imports: [
@@ -64,7 +66,11 @@ import { SharedModule } from '../shared/shared.module';
     MatDialogModule,
     MatCardModule,
   MatDialogModule,
- SharedModule
+ SharedModule,
+ MatMenuModule,
+ MatPaginatorModule,
+ MatSortModule,
+ MatChipsModule
   ],
   // entryComponents: [
   //   DialogComponent,

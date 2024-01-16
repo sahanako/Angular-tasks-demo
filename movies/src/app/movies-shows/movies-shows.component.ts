@@ -2,13 +2,41 @@ import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@
 import { DataService } from '../service/data.service';
 import { Root } from '../model';
 import { ActivatedRoute, Route, Router, RouterLink } from '@angular/router';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-movies-shows',
   templateUrl: './movies-shows.component.html',
-  styleUrls: ['./movies-shows.component.css']
+  styleUrls: ['./movies-shows.component.scss']
 })
 export class MoviesShowsComponent {
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    autoplay:true,
+    navSpeed: 100,
+    autoplayTimeout:2000,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: false
+  }
+
   moviesDetails: Root[] = []
   movies: any;
   trendingMovies: any

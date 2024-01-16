@@ -6,7 +6,7 @@ import { DataService } from '../service/data.service';
 @Component({
   selector: 'app-show-movie',
   templateUrl: './show-movie.component.html',
-  styleUrls: ['./show-movie.component.css']
+  styleUrls: ['./show-movie.component.scss']
 })
 
 export class ShowMovieComponent {

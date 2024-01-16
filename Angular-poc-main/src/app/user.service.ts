@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { ElementRef, Injectable } from '@angular/core';
 import { Router,NavigationExtras  } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import * as XLSX from 'xlsx';
 
 // import { User } from './user/user.model'; // Import the user model
+const EXCEL_EXTENSION = '.xlsx';
 
 @Injectable({
   providedIn: 'root',
@@ -71,5 +73,10 @@ constructor(private http :HttpClient,private router:Router,private activatedRout
 
   deleteData(id:any):Observable<any>{
     return this.http.delete(`${this.url}/${id}`)
+  }
+
+  getData(pageIndex: number, pageSize: number): Observable<any[]> {
+    const url = `${this.url}?_page=${pageIndex + 1}&_limit=${pageSize}`;
+    return this.http.get<any[]>(url);
   }
 }

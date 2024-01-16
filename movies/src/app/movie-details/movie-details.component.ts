@@ -10,30 +10,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.css']
+  styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent {
-  limit: number = 10; // <==== Edit this number to limit API results
-  customOptions: OwlOptions = {
-    loop: true,
-    autoplay: true,
-    center: true,
-    dots: false,
-    autoHeight: true,
-    autoWidth: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 1,
-      },
-      1000: {
-        items: 1,
-      }
-    }
-  }
-  arrayLength = 10
 movieid:any;
 movieData?:any
 movieCast?:any
@@ -46,13 +25,49 @@ reviews?:any
   @Input() shows?: boolean;
   tvshows: any;
   movieCrew: any;
-  constructor(private router:ActivatedRoute,private service:DataService,private sanitizer:DomSanitizer,private cdr:ChangeDetectorRef,private route:Router){
-  }
- 
+  movielang: any;
+  videos: any;
+  safeURL: any;
+  movieseasons: any;
+  seasonNumbers: any;
+  seasondetails: any;
+  episodedetails: any;
+  allSeasonDetails: any[] = [];
 
-  getArray(count: number) {
-    return new Array(count)
+  constructor(private router:ActivatedRoute,private service:DataService,private sanitizer:DomSanitizer,private cdr:ChangeDetectorRef,private route:Router){
+    const videoURL = 'https://www.youtube.com/embed?v=Ma1-sIoZnMs'
+    this.safeURL = this.sanitizer.bypassSecurityTrustResourceUrl(videoURL);
+
   }
+
+
+  customOptions: OwlOptions = {
+    loop: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    margin:20,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 3
+      },
+      740: {
+        items: 4
+      },
+      940: {
+        items: 5
+      }
+    },
+    nav: false
+  }
+
+
   ngOnInit(){
     this.router.params.forEach((params: any) => {
       this.movieid = params['id']
@@ -65,31 +80,68 @@ reviews?:any
 
     this.service.getdetails(type,this.movieid).subscribe((res:any)=>{
       // this.movie = res.map((res:{})=>res)
-      this.movieData = res      
+      this.movieData = res
+      this.movieGenre = res.genres
+      this.movielang = res.spoken_languages
+      this.movieseasons = res.seasons
+      console.log(this.movieseasons.season_number);
+      
+       if(type === 'tv'){
+        console.log("type is tv");
+        this.seasonNumbers = this.movieseasons.map((season: { season_number: any; }) => season.season_number);
+        console.log(this.seasonNumbers);
+        this.seasonNumbers.forEach((seasonNumber: any) => {
+          this.service.getSeasonDetails(this.movieid, seasonNumber).subscribe((res: any) => {
+            this.allSeasonDetails.push(res);
+              console.log(this.allSeasonDetails);
+            
+            // this.seasondetails.forEach((episode: any) => {
+            //   this.service.getEpisodeDetails(this.movieid,seasonNumber,episode.episode_number).subscribe((res:any)=>{
+            //     this.episodedetails = res
+            //     console.log(res);
+            //   })
+            // });
+          });
+        });
+       }
+
+         
     })
 
 
-    this.service.getMovieCast(this.movieid)?.subscribe((item:any)=>{
+
+    this.service.getMovieCast(this.movieid).subscribe((item:any)=>{
       this.movieCast = item.cast
       .filter((castmember: { known_for_department: string; })=>castmember.known_for_department)
       .map((filterCastMember: any) => filterCastMember)
       
       this.movieCrew = item.crew.filter((castmember: { known_for_department: string; })=>castmember.known_for_department)
       .map((filterCastMember: any) => filterCastMember)
-      console.log(this.movieCrew);
+      // console.log(this.movieCrew);
 
     })
 
     
     this.service.getReviews(this.movieid).subscribe((res:any)=>{
       this.reviews= res.results.map((author: { author_details: any; })=>author)
-      console.log(this.reviews);
+      // console.log(this.reviews);
       
       this.sanitize =  this.sanitizer. bypassSecurityTrustHtml(res.results.map((author: { content: any; })=>author.content))
       console.log(this.sanitize)
     }) 
-     
+    
+    this.service.getVideos(type,this.movieid).subscribe((res:any)=>{
+      this.videos = res.results.map((res:{})=>res)
+      // console.log(this.videos);  
+      
+      
+    })
+   
   }
-  
+  playMovie(){
+
+      console.log(this.videos.key);
+      
+  }
   
 }

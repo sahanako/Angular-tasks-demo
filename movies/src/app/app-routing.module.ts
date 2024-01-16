@@ -5,6 +5,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ShowMovieComponent } from './show-movie/show-movie.component';
 import { MoviesShowsComponent } from './movies-shows/movies-shows.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { ShowVideosComponent } from './show-videos/show-videos.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,9 @@ const routes: Routes = [
   },
   {
     path:'movie/:id',component:MovieDetailsComponent
+  },
+  {
+    path:'movie/video/:id',component:ShowVideosComponent
   }
   
 ];

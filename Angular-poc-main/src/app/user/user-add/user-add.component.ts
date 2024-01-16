@@ -59,7 +59,7 @@ export class UserAddComponent {
 
   name=new FormControl('',[Validators.required,Validators.minLength(3)]);
   gender = new FormControl('',[Validators.required])
-  address = new FormControl('',[Validators.required,Validators.maxLength(50)])
+  project = new FormControl('',[Validators.required,Validators.maxLength(50)])
   phoneno = new FormControl('',[Validators.required,Validators.maxLength(13),Validators.minLength(10)])
   email = new FormControl('',[Validators.required,Validators.email])
   dob = new FormControl('',[Validators.required])
@@ -71,7 +71,7 @@ export class UserAddComponent {
   userForm = new FormGroup({
     name:this.name,
     gender:this.gender,
-    address:this.address,
+    project:this.project,
     phoneno :this.phoneno,
     email:this.email,
     dob:this.dob,

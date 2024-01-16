@@ -1,18 +1,58 @@
-<div >
+<div>
     <div>
         <img class="image" mat-card-image src="https://image.tmdb.org/t/p/original{{movieData?.backdrop_path}}"
             alt="photo of {{movieData?.title}}">
-    
+
         <div class="data">
             <h2>{{movieData?.title}}</h2>
             <p>{{movieData?.tagline}}</p>
-            
-            <button mat-raised-button color="warn">Play Now</button>
+
+            <button mat-raised-button color="warn" [routerLink]="[]">Play Now</button>
+            <!-- <iframe width="560" height="315" [src]='safeURL' frameborder="0" allowfullscreen></iframe> -->
         </div>
     </div>
 </div>
 <div class="section">
-    <div class="section1">
+    <div class="section1" style="display: inline-block; width: 50%;">
+
+        <mat-card class="card-1">
+            <mat-card-header>
+                <mat-card-title>Seasons and episodes</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-accordion>
+                <mat-expansion-panel *ngFor="let item of movieseasons">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Season  {{item.season_number }}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                           {{item.episode_count}} Episodes
+                           {{item.id}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <div *ngFor="let season of allSeasonDetails">
+                        <h2>{{ season.id }}</h2>
+                        <p>Air Date: {{ season.air_date || 'Not available' }}</p>
+                        
+                        <div *ngIf="season.episodes && season.episodes.length">
+                            <h3>Episodes:</h3>
+                            <div *ngFor="let episode of season.episodes">
+                              <p>Episode Number: {{ episode.episode_number }}</p>
+                              <p>Name: {{ episode.name }}</p>
+                              <p>Air Date: {{ episode.air_date || 'Not available' }}</p>
+                              <!-- Add other episode details as needed -->
+                              <hr>
+                            </div>
+                   </div>
+                   </div>
+                </mat-expansion-panel>
+                </mat-accordion>
+            </mat-card-content>
+        </mat-card>
+
+
         <mat-card class="card-1">
             <mat-card-header>
                 <mat-card-title>Description</mat-card-title>
@@ -23,115 +63,96 @@
                 </p>
             </mat-card-content>
         </mat-card>
-        
-        <mat-card class="card-1"> 
+
+        <mat-card class="card-1">
             <mat-card-header>
                 <mat-card-title>Cast</mat-card-title>
             </mat-card-header>
             <div class="cast">
-                <mat-card-content *ngFor="let data of movieCast" >
-                     <div *ngIf="data.profile_path && data.known_for_department === 'Acting'">
-                        <img mat-card-avatar class="cast-images" src="https://image.tmdb.org/t/p/original{{data?.profile_path}}" alt="not found">
-                    </div>
+                <mat-card-content>
+                    <owl-carousel-o [options]="customOptions">
+                        <ng-container *ngFor="let data of movieCast">
+                            <ng-template carouselSlide
+                                *ngIf="data.profile_path && data.known_for_department === 'Acting'">
+                                <img mat-card-avatar class="cast-images"
+                                    src="https://image.tmdb.org/t/p/original{{data?.profile_path}}" alt="not found">
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
                 </mat-card-content>
             </div>
-         
+
         </mat-card>
     </div>
-     
+
 
     <div class="section2">
-        <mat-card class="card-1">
+
+        <mat-card class="card-2">
             <mat-card-title><mat-icon>calendar_today</mat-icon>Released Year</mat-card-title>
             <mat-card-content>
-              {{ movieData?.release_date | date:'yyyy' }}
+                {{ movieData?.release_date | date:'yyyy' }}
             </mat-card-content>
         </mat-card>
-       
-       
-        <mat-card class="card-1">
+
+        <mat-card class="card-2">
             <mat-card-title><mat-icon>reorder</mat-icon>Genres</mat-card-title>
             <mat-card-content class="genre-card">
                 <div class="genre" *ngFor="let genre of movieGenre">
-                    {{genre}}
+                    {{ genre.name }}
                 </div>
             </mat-card-content>
         </mat-card>
-  
-     
-        <mat-card class="card-1">
+
+        <mat-card class="card-2">
+            <mat-card-title><mat-icon>reorder</mat-icon>Available languages</mat-card-title>
+            <mat-card-content class="genre-card">
+                <div class="genre" *ngFor="let lang of movielang">
+                    {{ lang.english_name }}
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="card-2">
             <mat-card-header>
+                {{movieCast?.profile_path}}
                 <mat-card-title>Director</mat-card-title>
             </mat-card-header>
             <div class="cast">
-                <mat-card-content *ngFor="let data of movieCast" >
-                     <div *ngIf="data.profile_path && data.known_for_department === 'Directing'">
-                        <img mat-card-avatar class="cast-images" src="https://image.tmdb.org/t/p/original{{data?.profile_path}}" alt="not found">
-                    </div>
+                <mat-card-content>
+                    <owl-carousel-o [options]="customOptions">
+                        <ng-container *ngFor="let data of movieCast">
+                            <ng-template carouselSlide
+                                *ngIf="data.profile_path && data.known_for_department === 'Directing'">
+                                <img mat-card-avatar class="cast-images_directing"
+                                    src="https://image.tmdb.org/t/p/original{{data?.profile_path}}" alt="not found">
+                                <p>{{data?.name}}</p>
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
                 </mat-card-content>
             </div>
-        </mat-card>
 
-        <mat-card class="card-1">
+        </mat-card>
+        <!-- Director Card -->
+        <mat-card class="card-2">
             <mat-card-header>
-                <mat-card-title>Music</mat-card-title>
+                <mat-card-title>Production</mat-card-title>
             </mat-card-header>
             <div class="cast">
-                <mat-card-content *ngFor="let data of movieCrew" >
+                <mat-card-content>
                     <owl-carousel-o [options]="customOptions">
-
-                        <ng-container *ngFor="let slide of apiData">
-                          <ng-template class="slide" carouselSlide [id]="slide.id">
-                            <img [src]="slide.url" [alt]="slide.id" [title]="slide.id">
-                          </ng-template>
+                        <ng-container *ngFor="let data of movieCrew">
+                            <ng-template carouselSlide
+                                *ngIf="data.profile_path && data.known_for_department === 'Production'">
+                                <img mat-card-avatar class="cast-images_production"
+                                    src="https://image.tmdb.org/t/p/original{{data?.profile_path}}" alt="not found">
+                                <p>{{data?.name}}</p>
+                            </ng-template>
                         </ng-container>
-                    
-                      </owl-carousel-o>  
-                    <img mat-card-avatar class="cast-images" src="https://image.tmdb.org/t/p/original{{data?.profile_path}}" alt="not found">
+                    </owl-carousel-o>
                 </mat-card-content>
             </div>
         </mat-card>
-        </div>
     </div>
-
-
-       
-     
-    <!-- </div> -->
-   
-
-
-
-
-<!-- <div>
-    <mat-card class="">
-        <mat-card-title>Reviews</mat-card-title>
-        <mat-card-content *ngFor="let review of  reviews">
-            <mat-card-subtitle>{{review?.author_details.name}}</mat-card-subtitle>
-            {{review?.content}}
-        </mat-card-content>
-        
-    </mat-card>
-</div> -->
-
-
-<!-- <div>
-    <div>
-        <img class="image" mat-card-image src="https://image.tmdb.org/t/p/original{{tvshows?.backdrop_path}}"
-            alt="photo of {{tvshows?.title}}">
-    
-        <div class="data">
-            <h2>{{tvshows?.title}}</h2>
-            <p>{{tvshows?.tagline}}</p>
-            
-            <button mat-raised-button color="warn">Play Now</button>
-        </div>
-    </div>
-</div> -->
-
-
-
-
-
-
-
+</div>

@@ -16,8 +16,8 @@
   "Users": [
     {
       "name": "hub",
-      "gender": "male",
-      "address": "sasads",
+      "gender": "other",
+      "project": "project1",
       "phoneno": "9234567899",
       "email": "sahana2@gmail.com",
       "dob": "2023-10-09T18:30:00.000Z",
@@ -27,12 +27,13 @@
         "HDTuto.com"
       ],
       "domain": "Frontend",
+      "status":"pending",
       "id": 24
     },
     {
       "name": "sahana",
       "gender": "female",
-      "address": "sdjadjahdgdjhsjd",
+      "project": "project2",
       "phoneno": "9880111633",
       "email": "sahana22@gm",
       "dob": "2023-11-20T18:30:00.000Z",
@@ -41,13 +42,14 @@
         "ItSolutionStuff.com",
         "HDTuto.com"
       ],
-      "domain": "Frontend",
+      "domain": "Backend",
+      "status":"pending",
       "id": 25
     },
     {
       "name": "skjdhsad",
       "gender": "male",
-      "address": "dffds",
+      "project": "project1",
       "phoneno": "9880111633",
       "email": "ss@gmail.com",
       "dob": "2023-11-01T18:30:00.000Z",
@@ -56,13 +58,15 @@
         "ItSolutionStuff.com",
         "HDTuto.com"
       ],
-      "domain": "Frontend",
+      "domain": "Tester",
+      "status":"completed",
+
       "id": 26
     },
     {
       "name": "sakjdkdj",
       "gender": "male",
-      "address": "sadkajdksd",
+      "project": "project1",
       "phoneno": "98810222737",
       "email": "ksdlkdj@gmail.com",
       "dob": "2023-11-16T18:30:00.000Z",
@@ -70,13 +74,14 @@
       "website": [
         "ItSolutionStuff.com"
       ],
-      "domain": "Frontend",
+      "domain": "Tester",
+      "status":"inprogress",
       "id": 27
     },
     {
       "name": "dsad",
       "gender": "male",
-      "address": "sdada",
+      "project": "project3",
       "phoneno": "9880111633",
       "email": "sahana@gmail.com",
       "dob": "2023-11-10T18:30:00.000Z",
@@ -86,6 +91,118 @@
         "Nicesnippets.com"
       ],
       "domain": "Frontend",
+      "status":"completed",
+      "id": 28
+    },
+    {
+      "name": "dsad",
+      "gender": "male",
+      "project": "project3",
+      "phoneno": "9880111633",
+      "email": "sahana@gmail.com",
+      "dob": "2023-11-10T18:30:00.000Z",
+      "password": "2209@sahanaKocharagi",
+      "website": [
+        "ItSolutionStuff.com",
+        "Nicesnippets.com"
+      ],
+      "domain": "Frontend",
+      "status":"pending",
+      "id": 28
+    },
+    {
+      "name": "dsad",
+      "gender": "male",
+      "project": "project3",
+      "phoneno": "9880111633",
+      "email": "sahana@gmail.com",
+      "dob": "2023-11-10T18:30:00.000Z",
+      "password": "2209@sahanaKocharagi",
+      "website": [
+        "ItSolutionStuff.com",
+        "Nicesnippets.com"
+      ],
+      "domain": "Frontend",
+      "status":"pending",
+      "id": 28
+    },
+    {
+      "name": "dsad",
+      "gender": "male",
+      "project": "project3",
+      "phoneno": "9880111633",
+      "email": "sahana@gmail.com",
+      "dob": "2023-11-10T18:30:00.000Z",
+      "password": "2209@sahanaKocharagi",
+      "website": [
+        "ItSolutionStuff.com",
+        "Nicesnippets.com"
+      ],
+      "domain": "Frontend",
+      "status":"pending",
+      "id": 28
+    },
+    {
+      "name": "dsad",
+      "gender": "male",
+      "project": "project3",
+      "phoneno": "9880111633",
+      "email": "sahana@gmail.com",
+      "dob": "2023-11-10T18:30:00.000Z",
+      "password": "2209@sahanaKocharagi",
+      "website": [
+        "ItSolutionStuff.com",
+        "Nicesnippets.com"
+      ],
+      "domain": "Frontend",
+      "id": 28
+    },
+    {
+      "name": "dsad",
+      "gender": "male",
+      "project": "project3",
+      "phoneno": "9880111633",
+      "email": "sahana@gmail.com",
+      "dob": "2023-11-10T18:30:00.000Z",
+      "password": "2209@sahanaKocharagi",
+      "website": [
+        "ItSolutionStuff.com",
+        "Nicesnippets.com"
+      ],
+      "domain": "Frontend",
+      "status":"inprogress",
+      "id": 28
+    },{
+      "name": "dsad",
+      "gender": "male",
+      "project": "project3",
+      "phoneno": "9880111633",
+      "email": "sahana@gmail.com",
+      "dob": "2023-11-10T18:30:00.000Z",
+      "password": "2209@sahanaKocharagi",
+      "website": [
+        "ItSolutionStuff.com",
+        "Nicesnippets.com"
+      ],
+      "domain": "Frontend",
+      "status":"completed",
+      "id": 28
+    }
+    ,
+    {
+      "name": "dsad",
+      "gender": "male",
+      "project": "project3",
+      "phoneno": "9880111633",
+      "email": "sahana@gmail.com",
+      "dob": "2023-11-10T18:30:00.000Z",
+      "password": "2209@sahanaKocharagi",
+      "website": [
+        "ItSolutionStuff.com",
+        "Nicesnippets.com"
+      ],
+      "domain": "Frontend",
+      "status":"completed",
       "id": 28
     }
   ],
