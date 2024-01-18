@@ -1,7 +1,4 @@
-<!-- filter-component.component.html -->
-<button mat-button class="togglebutton" (click)="toggleFilterCard()">Filters</button>
-
-<mat-card class="filter-card" *ngIf="showFilterCard">
+<mat-card class="filter-card">
   <div class="filter-page">
     <div class="showing-data">
       <h3 *ngIf="startdate">Showing data from {{startdate | date :'dd MMM YYY'}} to {{currentdate | date:'dd MMM YYY'}}</h3>
@@ -45,3 +42,9 @@
   
 </mat-card>
 
+  <div class="selected-filters">
+    <mat-chip *ngFor="let filter of selectedFilters" [removable]="true" (removed)="removeChip(filter)">
+      {{ filter }}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </div>

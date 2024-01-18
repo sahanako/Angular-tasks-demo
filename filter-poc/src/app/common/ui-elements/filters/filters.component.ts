@@ -84,11 +84,9 @@ endDate: any;
     
         if (Array.isArray(value) && value.length > 0) {
           this.selectedFilters = this.selectedFilters.concat(value.map(item => item));
-          if(this.selectedFilters?.length <0){
-          }
         } else if (value !== undefined && value !== null && value !== '') {
           this.selectedFilters.push(value);
-        } 
+        }
       }
     }
     const currentDate = new Date();
@@ -130,9 +128,9 @@ endDate: any;
 
     filteredData = filteredData.filter(
       (user) =>
-        (selectedOptions.gender.length === 0 ||
+        (selectedOptions.gender?.length === 0 ||
           selectedOptions.gender.includes(user.gender)) &&
-        (selectedOptions.domain.length === 0 ||
+        (selectedOptions.domain?.length === 0 ||
           selectedOptions.domain.includes(user.domain)) &&
         (!selectedOptions.project || selectedOptions.project.includes(user.project))&&
         this.isDateRange(user.dob,startDate!,endDate!)
@@ -164,24 +162,46 @@ endDate: any;
     return true;
   }
     
-  removeChip(removedValue: any) {
-    console.log(removedValue);
-      this.selectedFilters = this.selectedFilters.filter((value: any) => value !== removedValue);
-    console.log(this.selectedFilters);
-      for (const key in this.filterForm.value) {
-      if (this.filterForm.value.hasOwnProperty(key)) {
-        const value = this.filterForm.value[key];
+  removeChip(removedFilter: any) {
+    // Remove the chip
+    this.selectedFilters = this.selectedFilters.filter((filter: any) => filter !== removedFilter);
   
-        if (Array.isArray(value)) {
-          this.filterForm.patchValue({ [key]: value.filter(item => item !== removedValue) });
-        } else if (value === removedValue) {
-          this.filterForm.patchValue({ [key]: null });
+    // Clear the corresponding form control
+    for (const key in this.filterForm.controls) {
+      if (this.filterForm.controls.hasOwnProperty(key)) {
+        const control = this.filterForm.get(key);
+  
+        if (Array.isArray(control?.value)) {
+          const updatedValue = control?.value?.filter((value: any) => value !== removedFilter);
+          control?.setValue(updatedValue && updatedValue.length > 0 ? updatedValue : null);
+        } else if (control?.value === removedFilter) {
+          control?.setValue(null);
         }
       }
     }
-      this.applyFilters();
   
-    return this.selectedFilters;
+    // Apply filters after chip removal
+    this.applyFilters();
+  }
+  
+  
+  
+  
+
+  private getFilterKey(filter: any): string {
+    // Find the corresponding filter key for a given filter value
+    for (const key in this.filterForm.value) {
+      if (this.filterForm.value.hasOwnProperty(key)) {
+        const value = this.filterForm.value[key];
+
+        if (Array.isArray(value) && value.includes(filter)) {
+          return key;
+        } else if (value === filter) {
+          return key;
+        }
+      }
+    }
+    return '';
   }
   
   clearFilter() {

@@ -11,8 +11,14 @@ export class ChipSetComponent {
 
 
   removeChip(index: any): void {
-    console.log(index);
-    this.chipremoved.emit(index)
+    const removedValue = this.selectedOptions[index];
+    console.log(removedValue);
+  
+    if (removedValue !== undefined && removedValue !== "") {
+      // Remove the chip only if the value is not undefined or empty
+      this.selectedOptions.splice(index, 1);
+      this.chipremoved.emit(index);
+    }
   }
 
 }

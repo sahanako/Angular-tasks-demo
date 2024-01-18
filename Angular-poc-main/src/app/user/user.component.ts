@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { FormBuilder, FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
-import { DialogComponent } from './dialog/dialog.component';
 import * as XLSX from 'xlsx';
 import {saveAs} from 'file-saver';
 import { MatDatepicker } from '@angular/material/datepicker';
@@ -25,7 +24,6 @@ export class UserComponent {
   Users: any;
   userForm: any;
 
-  simpleDialog: MatDialogRef<DialogComponent> | undefined;
   message: string = '';
   noUsersMessage?: string;
   usermesage?: boolean;
@@ -359,20 +357,6 @@ console.log(this.selectedChips.includes(item.status));
     })
   }
 
-  deleteConfirm(Id: any) {
-    const simpleDialog = this.dialogModel.open(DialogComponent)
-
-    simpleDialog.afterClosed().subscribe((result: boolean) => {
-      if (result === true) {
-        // User confirmed the deletion by pressing "Yes"
-        this.userService.deleteData(Id).subscribe(data => {
-          console.log(data);
-          console.log("deleted", data.id)
-        });
-        this.getAllUsers();
-      }
-    });
-  }
 
 exportToCSV(){
   const replacer = (key: any, value: null) => value === null ? '' : value; // specify how you want to handle null values here
