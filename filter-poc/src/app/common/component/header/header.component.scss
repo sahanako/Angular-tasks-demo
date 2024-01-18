@@ -1,0 +1,14 @@
+.header-section{
+    &-background{
+        width: 100%;
+        background-color: #225E9E;
+        height: 55px;
+        text-align: center;
+        h1{
+            display: inline-flex;
+            font-size: 30px;
+            padding: 10px;
+            color: #FFFFFF;
+        }
+    }
+}

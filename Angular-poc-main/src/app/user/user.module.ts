@@ -29,7 +29,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { FooterComponent } from './footer/footer.component';
 import { FilterPageComponent } from './filter-page/filter-page.component';
 import { MatSortModule } from '@angular/material/sort';
-import { MatChipsModule,MatChipInput } from '@angular/material/chips';
+      import { MatChipsModule,MatChipInput } from '@angular/material/chips';
 
 @NgModule({
   declarations: [

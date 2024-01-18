@@ -1,0 +1,102 @@
+<section>
+  <table mat-table #table [dataSource]="dataSource" matSort>
+    <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sticky>{{ column | titlecase}}</th>
+      <td class="cell-data" mat-cell *matCellDef="let element"> {{ element[column]  }}
+      </td>
+      
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <ng-container *ngIf="dataSource?.length === 0"> 
+      <tr mat-row>
+        <td  class="no-data-cell">No data available</td>
+      </tr>
+    </ng-container>
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</section>
+
+
+<!-- <div class="container_table" #userdata>
+  <table mat-table #table  class="mat-elevation-z8 table" matSort >
+    <ng-container matColumnDef="name">
+     
+        <th mat-header-cell *matHeaderCellDef mat-sort-header >
+          <div class="celldata"> Name
+          </div>
+        </th>
+ 
+     
+      <td mat-cell *matCellDef="let element"> {{ element.name  }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+      <td mat-cell *matCellDef="let element"> {{ element.gender }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{ element.email }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="project">
+      <th mat-header-cell *matHeaderCellDef> Project </th>
+      <td mat-cell *matCellDef="let element"> {{ element.project }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef class="matcell" mat-sort-header>
+        <div class="celldata">
+          Date of birth
+        </div></th>
+      <td mat-cell *matCellDef="let element"> {{ element.dob  }} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="domain">
+      <th mat-header-cell *matHeaderCellDef> Domain </th>
+      <td mat-cell *matCellDef="let element"> {{ element.domain }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{ element.status }} </td>
+    </ng-container>
+
+
+  <ng-container matColumnDef="Actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="userEdit(element.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      
+      <button mat-icon-button [routerLink]="['/user/data', element.id]">
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteConfirm(element.id)"  >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container> -->
+
+
+    <!-- Header row -->
+    <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+
+    <!-- Data rows -->
+    <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr> -->
+
+
+
+  <!-- </table> -->
+
+  <!-- <div class="noData" *ngIf="showNoDataMessage">
+    No data to display
+  </div> -->
+
+<!-- </div>  -->

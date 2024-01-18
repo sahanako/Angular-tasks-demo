@@ -1,0 +1,62 @@
+.filter-page{
+.showing-data{
+  padding-left: 20px;
+}
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    .filters-indi {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-left: 20px;
+    }
+  }
+}
+  .mat-mdc-select-value-text {
+    white-space: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+::ng-deep .mat-mdc-select-trigger{
+  position: absolute !important;
+  top: 8px;
+  font-size: 14px;
+}
+
+.filter-component{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  
+
+.container_clear{
+  h1{
+    display: flex;
+    align-items: center;
+    color: #225E9E;
+    font-weight: bold;
+    float: left;
+    font-size: 18px;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+  float: left;
+}
+}
+
+.togglebutton{
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  color: #225E9E;
+  background-color: red;
+  border-color: #225E9E !important;
+}
+.mat-card{
+  width: 100%;
+  padding-left: 20px;
+}

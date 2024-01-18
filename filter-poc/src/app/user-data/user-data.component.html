@@ -1,0 +1,41 @@
+<section class="main-container">
+
+  <app-header></app-header>
+
+  <div class="heading">
+    <h2>USER DETAILS</h2>
+  </div>
+  <div class="buttons">
+    <div class="chips-search">
+      <app-chips [options]="filterOptions" [defaultOption]="defaultOption"
+      [statusCounts]="statusCounts" (selectedOption)="onSelectedOption($event)"></app-chips>
+  
+    </div>
+
+    <div class="button">
+      <div class="container_export">
+        <mat-icon class="icon" [matMenuTriggerFor]="menu">save_alt</mat-icon>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="exportToCSV()">Export to CSV</button>
+          <button mat-menu-item (click)="exportToExcel()">Export to excel</button>
+        </mat-menu>
+      </div>
+     
+    </div>
+    
+    <app-search-filter (searchChange)="onSearchInputChange($event)"></app-search-filter>
+  </div>
+
+  <div class="filters">
+    <app-filters [dataSource]="dataSource" (filterChanged)="handleFilteredData($event)"></app-filters>
+  </div>
+
+
+  <app-table [displayedColumns]="displayedColumns" [dataSource]="filteredDataSource"></app-table>
+
+  <mat-paginator #paginator [length]="10" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"
+    showFirstLastButtons>
+  </mat-paginator>
+
+  <app-footer></app-footer>
+</section>

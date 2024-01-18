@@ -1,0 +1,47 @@
+<!-- filter-component.component.html -->
+<button mat-button class="togglebutton" (click)="toggleFilterCard()">Filters</button>
+
+<mat-card class="filter-card" *ngIf="showFilterCard">
+  <div class="filter-page">
+    <div class="showing-data">
+      <h3 *ngIf="startdate">Showing data from {{startdate | date :'dd MMM YYY'}} to {{currentdate | date:'dd MMM YYY'}}</h3>
+    </div>
+    <form [formGroup]="filterForm" (ngSubmit)="applyFilters()" class="filter-form">
+      <div class="filter-component">
+        <div *ngFor="let config of filterConfigs" class="filters">
+          <div class="filters-indi">
+            <mat-label *ngIf="config.isSingleSelection">{{ config.label }}</mat-label>
+            <mat-form-field *ngIf="config.isSingleSelection; else multiSelectField" appearance="outline" class="filter">
+              <mat-select formControlName="{{ config.label.toLowerCase() }}" placeholder="{{ config.label }}" (selectionChange)="applyFilters()" (openedChange)="onSelectOpenedChange($event)">
+                <mat-option *ngFor="let option of config.options" [value]="option">
+                  {{ option }} 
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          
+          <ng-template #multiSelectField>
+            <div class="filters-indi">
+              <mat-label>{{ config.label }}</mat-label>
+              <mat-form-field appearance="outline" class="filters">
+                <mat-select formControlName="{{ config.label.toLowerCase() }}" placeholder="{{ config.label }}" multiple (selectionChange)="applyFilters()">
+                  <mat-option *ngFor="let option of config.options"  [value]="option">
+                    {{ option }} 
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </ng-template>
+        </div>
+    
+        <div class="container_clear">
+          <h1 (click)="clearFilter()">Clear all</h1>
+        </div>
+      </div>
+    </form>
+  </div>
+  <app-chip-set [selectedOptions]="selectedFilters" (chipremoved)="removeChip($event)"></app-chip-set>
+
+  
+</mat-card>
+

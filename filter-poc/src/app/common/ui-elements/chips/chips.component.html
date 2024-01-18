@@ -1,0 +1,14 @@
+<div class="chips-buttons">
+    <mat-chip-set #chipList aria-label="Filter chips" class="chip-set">
+        <mat-chip *ngFor="let option of options"
+            [ngClass]="{'pending':option.value === defaultChip?.value && defaultChip?.selected, 'inprogress': option.value === 'Inprogress'&& option.selected ,'completed': option.value === 'Completed'&& option.selected}"
+            (click)="toggleSelection(option)">
+            <div class="icon-label">
+                <mat-icon><span class="material-symbols-outlined">{{ option.icon}}</span></mat-icon>
+                <div   *ngFor="let count of statusCounts | keyvalue">
+
+                    <mat-label *ngIf="count.key === option.value">{{  count.value }}</mat-label>
+                </div>
+            </div>
+        </mat-chip>
+    </mat-chip-set>

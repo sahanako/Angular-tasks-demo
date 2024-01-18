@@ -12,7 +12,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class MoviesShowsComponent {
   customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: false,
+    mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     dots: false,

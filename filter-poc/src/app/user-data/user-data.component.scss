@@ -1,0 +1,78 @@
+body{
+    overflow: hidden;
+}
+
+.main-container{
+    width: 100%;
+    overflow: hidden;
+}
+.chips-search{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.heading{
+    h2{
+        padding-left: 10px;
+    }
+}
+.filters {
+    display: flex;
+    width: 100%;
+    margin: 0 auto; 
+  }
+  
+  @media (max-width: 768px) {
+    .filters {
+      padding: 10px;
+    }
+  }
+
+  .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .button{
+        display: flex;
+        float: left;
+        align-items: center;
+        padding: 5px;
+        margin-left: 40%;
+        justify-content: center;
+        gap: 20px;
+        .container_export{
+            cursor: pointer;
+            color: #225E9E;
+        }
+        .container_clear{
+            h1{
+                font-size: 16px;
+                color: #225E9E;
+                font-weight: bold;
+                align-items: center;
+                cursor: pointer;
+                padding-top: 20px;
+            }
+        }
+
+        .container_export,.container_clear{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-left: 20px;
+        }
+        .refresh{
+            .mat-icon{
+                color: #225E9E;
+                padding-top: 2px;
+                font-size: 25px;
+                cursor: pointer;
+            }
+          }
+    }
+    
+  }
+ 
+  

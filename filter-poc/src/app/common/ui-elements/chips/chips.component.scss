@@ -1,0 +1,40 @@
+.chips-buttons
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .chip-set{
+        padding-left: 20px;
+        mat-chip{
+            cursor: pointer;            
+        }
+        .pending{
+            background-color: #CCE7FF;
+        }
+        .inprogress{
+            background-color: #17c69C;
+        }
+        .completed{
+            background-color: #225e9ea0;
+        }
+        .icon-label{
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            mat-icon{
+                font-size: 20px;
+                margin-top: 4px;
+            }
+            
+        }
+    }
+}
+
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+}

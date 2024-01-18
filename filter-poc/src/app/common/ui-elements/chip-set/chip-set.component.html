@@ -1,0 +1,11 @@
+<!-- app-chip-set.component.html -->
+
+<mat-chip-listbox #chipGrid aria-label="Selected Filters">
+    <mat-chip-row *ngFor="let selectedFilter of selectedOptions; let i =index">
+      {{ selectedFilter }}
+      <button matChipRemove (click)="removeChip(selectedFilter)">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip-row>
+  </mat-chip-listbox>
+  

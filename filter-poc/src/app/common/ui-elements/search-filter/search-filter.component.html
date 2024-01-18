@@ -1,0 +1,11 @@
+<div class="search-input">
+    <form action="" [formGroup]="searchForm">
+        <div class="icons">
+            <button class="btn-search"><mat-icon matPrefix class="search-icon">search</mat-icon></button>
+            <input matInput formControlName="searchInput" type="text" placeholder="Search" class="search" (input)="onInputChange($event)">
+            <button class="btn-clear"><mat-icon  matSuffix (click)="clearSearch()">clear</mat-icon></button>
+        </div>
+    </form>
+    
+</div>
+
